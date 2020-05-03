@@ -1,4 +1,4 @@
-﻿@model IEnumerable<CoreProject03.Models.Music>
+﻿@model IEnumerable<CoreProject03.Models.Band>
 
 @{
     ViewData["Title"] = "Index";
@@ -17,7 +17,7 @@
                 @Html.DisplayNameFor(model => model.Title)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Author)
+                @Html.DisplayNameFor(model => model.Gender)
             </th>
             <th></th>
         </tr>
@@ -29,7 +29,7 @@
                 @Html.DisplayFor(modelItem => item.Title)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Author)
+                @Html.DisplayFor(modelItem => item.Gender)
             </td>
             <td>
                 @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
