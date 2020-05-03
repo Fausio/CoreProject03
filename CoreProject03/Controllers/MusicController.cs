@@ -11,13 +11,19 @@ namespace CoreProject03.Controllers
     {
         public IActionResult Index()
         {
-            return View(new List<Music>()
+            return View(new List<Band>()
                         {
-                            new Music{Title= "4 ou 5",Author="Força Suprema ft Prodigio"},
-                            new Music{Title= "Hello",Author="Beyonce"},
-                            new Music{Title= "Patrão",Author="MC - Roger"}
+                            new Band{Title= "Dope Music volume 1", Origin="Linha de cintra",Biography="de africa para europa",Gender="Rap"},
+                            new Band{Title= "Nkatanga", Origin="Moçambique",Biography="string string sting ",Gender="Jazz"},
+                            new Band{Title= "The moon", Origin="String string",Biography="bla bla bla",Gender="R&B"},
                         }
            );
+        }
+
+        public IActionResult Add()
+        {
+
+            return this.View(new Band());
         }
     }
 }
