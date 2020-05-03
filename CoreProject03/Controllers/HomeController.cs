@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using CoreProject03.Models;
 using Microsoft.AspNetCore.Mvc;
 
 namespace CoreProject03.Controllers
@@ -10,7 +11,8 @@ namespace CoreProject03.Controllers
     {
         public IActionResult Index()
         {
-            return View();
+            var thebookModel = new Book() { Author = "Fáusio", Title = "Mastarpeace" };
+            return View(thebookModel);
         }
     }
 }
