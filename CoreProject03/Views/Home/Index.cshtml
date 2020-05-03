@@ -1,16 +1,11 @@
-﻿
+﻿@model CoreProject03.Models.Book
 @{
-    Layout = null;
+    Layout ="~/Views/Shared/_Layout.cshtml";
 }
 
-<!DOCTYPE html>
+ 
 
-<html>
-<head>
-    <meta name="viewport" content="width=device-width" />
-    <title>Index</title>
-</head>
-<body>
-    <h1> Hello word for core </h1>
-</body>
-</html>
+ 
+    <h1> @Model.Title </h1>
+    <p>@Model.Author</p>
+ 
