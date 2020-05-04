@@ -42,5 +42,10 @@ namespace CoreProject03.Controllers
         {
             return View(listMusic.Where(x => x.Title == id).FirstOrDefault());
         }
+
+        public IActionResult Create(Band band)
+        {
+            return RedirectToAction("Index");
+        }
     }
 }
