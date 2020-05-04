@@ -32,16 +32,13 @@
     <nav id="sidebar-wrapper">
         <ul class="sidebar-nav">
             <li class="sidebar-brand">
-                <a class="js-scroll-trigger" href="#page-top">Start Bootstrap</a>
+                <a class="js-scroll-trigger" href="#page-top">@Html.ActionLink("hOME", "Index", "Home")</a>
             </li>
             <li class="sidebar-nav-item">
-                <a class="js-scroll-trigger" href="#page-top">@Html.ActionLink("Home", "Index", "Home")</a>
+                <a class="js-scroll-trigger"  >@Html.ActionLink("Musics", "Index", "Music")</a>
             </li>
             <li class="sidebar-nav-item">
-                <a class="js-scroll-trigger" href="#page-top">@Html.ActionLink("Musics", "Index", "Music")</a>
-            </li>
-            <li class="sidebar-nav-item">
-                <a class="js-scroll-trigger" href="#page-top">@Html.ActionLink("Add Music", "add", "Music")</a>
+                <a class="js-scroll-trigger"  >@Html.ActionLink("Add Music", "add", "Music")</a>
             </li>
             <li class="sidebar-nav-item">
                 <a class="js-scroll-trigger" href="#about">About</a>
