@@ -14,24 +14,24 @@
         <form asp-action="Add">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <div class="form-group">
-                <label asp-for="Title" class="control-label"></label>
-                <input asp-for="Title" class="form-control" />
-                <span asp-validation-for="Title" class="text-danger"></span>
+                @Html.LabelFor(x => x.Title)<br />
+                @Html.TextBoxFor(x => x.Title)
+                @Html.ValidationMessageFor(x => x.Title)
             </div>
             <div class="form-group">
-                <label asp-for="Origin" class="control-label"></label>
-                <input asp-for="Origin" class="form-control" />
-                <span asp-validation-for="Origin" class="text-danger"></span>
+                @Html.LabelFor(x => x.Origin)<br />
+                @Html.TextBoxFor(x => x.Origin)
+                @Html.ValidationMessageFor(x => x.Origin)
             </div>
             <div class="form-group">
-                <label asp-for="Gender" class="control-label"></label>
-                <input asp-for="Gender" class="form-control" />
-                <span asp-validation-for="Gender" class="text-danger"></span>
+                @Html.LabelFor(x => x.Gender)<br />
+                @Html.TextBoxFor(x => x.Gender)
+                @Html.ValidationMessageFor(x => x.Gender)
             </div>
             <div class="form-group">
-                <label asp-for="Biography" class="control-label"></label>
-                <input asp-for="Biography" class="form-control" />
-                <span asp-validation-for="Biography" class="text-danger"></span>
+                @Html.LabelFor(x => x.Biography)<br />
+                @Html.TextAreaFor(x => x.Biography)
+                @Html.ValidationMessageFor(x => x.Biography)
             </div>
             <div class="form-group">
                 <input type="submit" value="Create" class="btn btn-default" />
@@ -41,6 +41,6 @@
 </div>
 
 <div>
-    <a asp-action="Index">Back to List</a>
+    @Html.ActionLink("Back to List", "Index", new { /* id = Model.PrimaryKey */ })
 </div>
 
