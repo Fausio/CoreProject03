@@ -9,15 +9,17 @@ namespace CoreProject03.Controllers
 {
     public class MusicController : Controller
     {
-        public IActionResult Index()
-        {
-            return View(new List<Band>()
+        public List<Band> listMusic = new List<Band>()
                         {
                             new Band{Title= "Dope Music volume 1", Origin="Linha de cintra",Biography="de africa para europa",Gender="Rap"},
                             new Band{Title= "Nkatanga", Origin="Moçambique",Biography="string string sting ",Gender="Jazz"},
-                            new Band{Title= "The moon", Origin="String string",Biography="bla bla bla",Gender="R&B"},
-                        }
-           );
+                            new Band{Title= "The moon", Origin="String string",Biography="bla bla bla",Gender="R&B"}
+      } ;
+
+        public IActionResult Index()
+        {
+            return View(listMusic);
+
         }
 
         public IActionResult Add()
@@ -26,19 +28,19 @@ namespace CoreProject03.Controllers
             return this.View(new Band());
         }
 
-        public IActionResult Details(Band band)
+        public IActionResult Details(string id)
         {
-            return View(band);
+            return View(listMusic.Where(x => x.Title == id).FirstOrDefault());
         }
 
-        public IActionResult Edit(Band band)
+        public IActionResult Edit(string id)
         {
-            return View(band);
+           return View(listMusic.Where(x=> x.Title ==id).FirstOrDefault());
         }
 
-        public IActionResult Delete(Band band)
+        public IActionResult Delete(string id)
         {
-            return View(band);
+            return View(listMusic.Where(x => x.Title == id).FirstOrDefault());
         }
     }
 }
