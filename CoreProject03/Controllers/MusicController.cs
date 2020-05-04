@@ -25,5 +25,20 @@ namespace CoreProject03.Controllers
 
             return this.View(new Band());
         }
+
+        public IActionResult Details(Band band)
+        {
+            return View(band);
+        }
+
+        public IActionResult Edit(Band band)
+        {
+            return View(band);
+        }
+
+        public IActionResult Delete(Band band)
+        {
+            return View(band);
+        }
     }
 }
