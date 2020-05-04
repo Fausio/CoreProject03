@@ -8,16 +8,16 @@ namespace CoreProject03.Models
 {
     public class Band
     {
-        [Display(Name ="Enter the name of music")]
+        [Display(Name ="The name of music")]
         public string Title { get; set; }
 
-        [Display(Name = "Enter the name of origin")]
+        [Display(Name = "The name of origin")]
         public string Origin { get; set; }
 
-        [Display(Name = "Enter the name of gender")]
+        [Display(Name = "The name of gender")]
         public string Gender { get; set; }
 
-        [Display(Name = "write a biography")]
+        [Display(Name = "Biography")]
         public string Biography { get; set; }
     }
 }
