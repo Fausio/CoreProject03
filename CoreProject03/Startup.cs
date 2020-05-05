@@ -29,8 +29,12 @@ namespace CoreProject03
             app.UseStaticFiles();
             app.UseMvc(r =>
             {
-                r.MapRoute(name: "default", template: "{controller}/{action}/{id?}");
+                r.MapRoute( name: "default", 
+                            template: "{controller}/{action}/{id?}", 
+                            defaults: new { controller = "Home", action = "Index" });
             });
+
+             
         }
     }
 }
