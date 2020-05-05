@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using CoreProject03.Models;
 using Microsoft.AspNetCore.Mvc;
+using Newtonsoft.Json;
 
 namespace CoreProject03.Controllers
 {
@@ -14,7 +15,7 @@ namespace CoreProject03.Controllers
                             new Band{Title= "Dope Music volume 1", Origin="Linha de cintra",Biography="de africa para europa",Gender="Rap"},
                             new Band{Title= "Nkatanga", Origin="Moçambique",Biography="string string sting ",Gender="Jazz"},
                             new Band{Title= "The moon", Origin="String string",Biography="bla bla bla",Gender="R&B"}
-      } ;
+      };
 
         public IActionResult Index()
         {
@@ -33,14 +34,14 @@ namespace CoreProject03.Controllers
             return View(listMusic.Where(x => x.Title == id).FirstOrDefault());
         }
 
-        public IActionResult TesteGetDetails( )
+        public JsonResult TesteGetDetails()
         {
-            return View(new Band { Title = "new new", Origin = "String string", Biography = "bla bla bla", Gender = "R&B" });
+            return Json(JsonConvert.SerializeObject(new Band { Title = "new new", Origin = "String string", Biography = "bla bla bla", Gender = "R&B" }));
         }
 
         public IActionResult Edit(string id)
         {
-           return View(listMusic.Where(x=> x.Title ==id).FirstOrDefault());
+            return View(listMusic.Where(x => x.Title == id).FirstOrDefault());
         }
 
         public IActionResult Delete(string id)
