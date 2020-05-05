@@ -33,6 +33,11 @@ namespace CoreProject03.Controllers
             return View(listMusic.Where(x => x.Title == id).FirstOrDefault());
         }
 
+        public IActionResult TesteGetDetails( )
+        {
+            return View(new Band { Title = "new new", Origin = "String string", Biography = "bla bla bla", Gender = "R&B" });
+        }
+
         public IActionResult Edit(string id)
         {
            return View(listMusic.Where(x=> x.Title ==id).FirstOrDefault());

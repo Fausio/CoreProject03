@@ -7,37 +7,57 @@
 
 <h2>Details / Edit</h2>
 
-<div>
-    <h4>Band</h4>
-    <hr />
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.Title)
-        </dt>
-        <dd>
-            @Html.DisplayFor(model => model.Title)
-        </dd>
-        <dt>
-            @Html.DisplayNameFor(model => model.Origin)
-        </dt>
-        <dd>
-            @Html.DisplayFor(model => model.Origin)
-        </dd>
-        <dt>
-            @Html.DisplayNameFor(model => model.Gender)
-        </dt>
-        <dd>
-            @Html.DisplayFor(model => model.Gender)
-        </dd>
-        <dt>
-            @Html.DisplayNameFor(model => model.Biography)
-        </dt>
-        <dd>
-            @Html.DisplayFor(model => model.Biography)
-        </dd>
-    </dl>
+<div class="container">
+    <div class="row">
+        <div class="col-md-6">
+            <h4>Band</h4>
+            <hr />
+            <dl class="dl-horizontal">
+                <dt>
+                    @Html.DisplayNameFor(model => model.Title)
+                </dt>
+                <dd>
+                    @Html.DisplayFor(model => model.Title)
+                </dd>
+                <dt>
+                    @Html.DisplayNameFor(model => model.Origin)
+                </dt>
+                <dd>
+                    @Html.DisplayFor(model => model.Origin)
+                </dd>
+                <dt>
+                    @Html.DisplayNameFor(model => model.Gender)
+                </dt>
+                <dd>
+                    @Html.DisplayFor(model => model.Gender)
+                </dd>
+                <dt>
+                    @Html.DisplayNameFor(model => model.Biography)
+                </dt>
+                <dd>
+                    @Html.DisplayFor(model => model.Biography)
+                </dd>
+            </dl>
+        </div>
+        <div id="data">
+
+        </div>
+        <div>
+            @Html.ActionLink("Edit", "Edit", new { /* id = Model.PrimaryKey */ }) |
+            @Html.ActionLink("Back to List", "Index", new { /* id = Model.PrimaryKey */ }) |
+            <button id="ajaxGetBtn"></button>
+        </div>
+
+    </div>
 </div>
-<div>
-    @Html.ActionLink("Edit", "Edit", new { /* id = Model.PrimaryKey */ }) |
-    @Html.ActionLink("Back to List", "Index", new { /* id = Model.PrimaryKey */ }) 
-</div>
+
+
+<script>
+    fetch('/music/TesteGetDetails')
+        .then(function (response) {
+            return response.json();
+        })
+        .then(function (myJson) {
+            console.log(JSON.stringify(myJson));
+        });
+</script>
