@@ -52,8 +52,33 @@
 </div>
 
 
+@*<script>
+        fetch('/music/TesteGetDetails')
+            .then(function (response) {
+                return response.json();
+            })
+            .then(function (myJson) {
+                console.log(myJson);
+            });
+    </script>*@
+
+
 <script>
-    fetch('/music/TesteGetDetails')
+    var data = {
+        Title: "bla Title bla ",
+        Origin: "bla Origin bla ",
+        Gender: "bla Gender bla ",
+        Biography: "bla Biography bla "
+    }
+
+    fetch('/music/TestePostCreate', {
+        method: 'POST',
+        body: JSON.stringify(data),
+        headers:{
+            "accept": "application/json",
+            "Content-type": 'application/ json'
+    }
+    })
         .then(function (response) {
             return response.json();
         })

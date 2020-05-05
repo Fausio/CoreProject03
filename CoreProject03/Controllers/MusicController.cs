@@ -53,5 +53,10 @@ namespace CoreProject03.Controllers
         {
             return RedirectToAction("Index");
         }
+
+        public IActionResult TestePostCreate([FromBody]Band band)
+        {
+            return RedirectToAction("Index");
+        }
     }
 }
