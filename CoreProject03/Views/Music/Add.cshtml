@@ -5,45 +5,54 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>Add</h2>
+<div class="container">
+    <div class="row">
+        <div class="col-md-6">
+            <h2>Add</h2>
 
-<h4>Band</h4>
-<hr />
-<div class="row">
-    <div class="col-md-4">
-        @using (Html.BeginForm("Create", "Music"))
-        {
-            <div class="form-group">
-                @Html.LabelFor(x => x.Title)<br />
-                @Html.TextBoxFor(x => x.Title)
-                @Html.ValidationMessageFor(x => x.Title)
-            </div>
-            <div class="form-group">
-                @Html.LabelFor(x => x.Origin)<br />
-                @Html.TextBoxFor(x => x.Origin)
-                @Html.ValidationMessageFor(x => x.Origin)
-            </div>
-            <div class="form-group">
-                @Html.LabelFor(x => x.Gender)<br />
-                @Html.TextBoxFor(x => x.Gender)
-                @Html.ValidationMessageFor(x => x.Gender)
-            </div>
-            <div class="form-group">
-                @Html.LabelFor(x => x.Biography)<br />
-                @Html.TextAreaFor(x => x.Biography)
-                @Html.ValidationMessageFor(x => x.Biography)
-            </div>
-            <div class="form-group">
-                <input type="submit" value="Create" class="btn btn-default" />
-            </div>
-        }
+            <h4>Band</h4>
+            <hr />
+            <div class="row">
+                <div class="col-md-4">
+                    @using (Html.BeginForm("Create", "Music"))
+                    {
+                        <div class="form-group">
+                            @Html.LabelFor(x => x.Title)<br />
+                            @Html.TextBoxFor(x => x.Title)
+                            @Html.ValidationMessageFor(x => x.Title)
+                        </div>
+                        <div class="form-group">
+                            @Html.LabelFor(x => x.Origin)<br />
+                            @Html.TextBoxFor(x => x.Origin)
+                            @Html.ValidationMessageFor(x => x.Origin)
+                        </div>
+                        <div class="form-group">
+                            @Html.LabelFor(x => x.Gender)<br />
+                            @Html.TextBoxFor(x => x.Gender)
+                            @Html.ValidationMessageFor(x => x.Gender)
+                        </div>
+                        <div class="form-group">
+                            @Html.LabelFor(x => x.Biography)<br />
+                            @Html.TextAreaFor(x => x.Biography)
+                            @Html.ValidationMessageFor(x => x.Biography)
+                        </div>
+                        <div class="form-group">
+                            <input type="submit" value="Create" class="btn btn-default" />
+                        </div>
+                    }
 
 
 
+                </div>
+            </div>
+
+            <div>
+                @Html.ActionLink("Back to List", "Index", new { /* id = Model.PrimaryKey */ })
+            </div>
+
+
+        </div>
     </div>
 </div>
 
-<div>
-    @Html.ActionLink("Back to List", "Index", new { /* id = Model.PrimaryKey */ })
-</div>
 

@@ -14,7 +14,7 @@
  
   
   <ItemGroup>
-    <Folder Include="wwwroot\" />
+    <Folder Include="wwwroot\materialize\ParallaxTemplate\" />
   </ItemGroup>
 
 </Project>

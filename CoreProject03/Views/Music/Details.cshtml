@@ -38,18 +38,22 @@
                     @Html.DisplayFor(model => model.Biography)
                 </dd>
             </dl>
-        </div>
-        <div id="data">
+
+            <div id="data">
+
+            </div>
+            <div>
+                @Html.ActionLink("Edit", "Edit", new { /* id = Model.PrimaryKey */ }) |
+                @Html.ActionLink("Back to List", "Index", new { /* id = Model.PrimaryKey */ }) |
+                <button id="ajaxGetBtn"></button>
+            </div>
+
 
         </div>
-        <div>
-            @Html.ActionLink("Edit", "Edit", new { /* id = Model.PrimaryKey */ }) |
-            @Html.ActionLink("Back to List", "Index", new { /* id = Model.PrimaryKey */ }) |
-            <button id="ajaxGetBtn"></button>
-        </div>
-
     </div>
 </div>
+
+
 
 
 @*<script>
@@ -74,10 +78,10 @@
     fetch('/music/TestePostCreate', {
         method: 'POST',
         body: JSON.stringify(data),
-        headers:{
+        headers: {
             "accept": "application/json",
             "Content-type": 'application/ json'
-    }
+        }
     })
         .then(function (response) {
             return response.json();
