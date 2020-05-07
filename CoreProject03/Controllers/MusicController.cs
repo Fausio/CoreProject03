@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using CoreProject03.Models;
+using CoreProject03.Repository;
 using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
 
@@ -10,16 +11,16 @@ namespace CoreProject03.Controllers
 {
     public class MusicController : Controller
     {
-        public List<Band> listMusic = new List<Band>()
-                        {
-                            new Band{Title= "Dope Music volume 1", Origin="Linha de cintra",Biography="de africa para europa",Gender="Rap"},
-                            new Band{Title= "Nkatanga", Origin="Moçambique",Biography="string string sting ",Gender="Jazz"},
-                            new Band{Title= "The moon", Origin="String string",Biography="bla bla bla",Gender="R&B"}
-      };
+        private readonly IRepositoryBand _repositoryBand;
+
+        public MusicController(IRepositoryBand repository)
+        {
+            _repositoryBand= repository;
+        }
 
         public IActionResult Index()
         {
-            return View(listMusic);
+            return View(_repositoryBand.Bands());
 
         }
 
@@ -31,7 +32,7 @@ namespace CoreProject03.Controllers
 
         public IActionResult Details(string id)
         {
-            return View(listMusic.Where(x => x.Title == id).FirstOrDefault());
+            return View(_repositoryBand.Band(id));
         }
 
         public JsonResult TesteGetDetails()
@@ -41,12 +42,12 @@ namespace CoreProject03.Controllers
 
         public IActionResult Edit(string id)
         {
-            return View(listMusic.Where(x => x.Title == id).FirstOrDefault());
+            return View(_repositoryBand.Band(id));
         }
 
         public IActionResult Delete(string id)
         {
-            return View(listMusic.Where(x => x.Title == id).FirstOrDefault());
+            return View(_repositoryBand.Band(id));
         }
 
         public IActionResult Create(Band band)
