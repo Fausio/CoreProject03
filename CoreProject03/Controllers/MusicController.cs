@@ -5,6 +5,8 @@ using System.Threading.Tasks;
 using CoreProject03.Models;
 using CoreProject03.Repository;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore.Metadata.Internal;
+using Microsoft.VisualStudio.Web.CodeGeneration.Contracts.Messaging;
 using Newtonsoft.Json;
 
 namespace CoreProject03.Controllers
@@ -50,14 +52,23 @@ namespace CoreProject03.Controllers
             return View(_repositoryBand.Band(id));
         }
 
-        public IActionResult Create(Band band)
+        public IActionResult Create([FromForm]Band band)
         {
-            return RedirectToAction("Index");
-        }
 
-        public IActionResult TestePostCreate([FromBody]Band band)
-        {
-            return RedirectToAction("Index");
+            try
+            {
+                if (ModelState.IsValid)
+                {
+                    Console.WriteLine("Is valid");
+                }
+            }
+            catch (Exception x)
+            {
+
+                Console.WriteLine(x.Message);
+            }
+            return RedirectToAction("Add");
         }
+ 
     }
 }

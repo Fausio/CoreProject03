@@ -9,6 +9,7 @@ namespace CoreProject03.Models
     public class Band
     {
         [Display(Name ="The name of music")]
+        [Required(ErrorMessage = "the title is primordial")]
         public string Title { get; set; }
 
         [Display(Name = "The name of origin")]
